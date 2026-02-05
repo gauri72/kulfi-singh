@@ -589,6 +589,8 @@ html{
     flex-direction: column;
 }
 .classic-con .classic-box .classic_image_box {
+    /* Fixed image area so tall images (e.g. 700px) don't grow/overflow the card */
+    height: 244px;
     min-height: 244px;
     display: flex;
     align-items: center;
@@ -596,6 +598,7 @@ html{
     text-align: center;
     border-radius: 10px;
     background: var(--e-global-color-white);
+    overflow: hidden;
 }
 .classic-con .classic-box .box1 {
     background-color: #fffaf4;
@@ -611,12 +614,20 @@ html{
 }
 .classic-con .classic-box .classic_image_box figure{
     position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    inset: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .classic-con .classic-box .classic_image_box figure img {
     transition: all 0.3s ease-in-out;
+    /* Never allow tall images (e.g. height:700px) to overflow the card */
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
 }
 .classic-con .classic-box:hover .classic_image_box figure img {
     transform: translateY(-5px);

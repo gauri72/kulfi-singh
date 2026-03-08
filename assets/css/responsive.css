@@ -114,6 +114,15 @@
 .limited-con .limited-rightimage {top: 26px; right: -180px;}
 .limited-con .limited-rightimage img {width: 390px;}
 }
+@media screen and (max-width: 991px){
+/* Footer: remove extra gap between copyright and credit on tablet/mobile */
+.footer-con .copyright p{
+    margin: 0;
+}
+.footer-con .copyright .credit{
+    margin-top: 0;
+}
+}
 @media screen and (min-width: 1441px) and (max-width: 1499px){
 /* Home 1 */
 .banner-con .banner-lefttopimage {display: none;}
@@ -188,9 +197,10 @@ h3 {font-size: 36px; line-height: 36px;}
 .relive-con .relive_content {padding: 140px 0 100px 35px;}
 .relive-con .relive_content .relive-triangle {display: none;}
 .relive-con .relive-rightbottomimage img {width: 170px;}
-.relive-con .relive-image {left: 25px;}
-.relive-con .relive-image::before {width: 500px; height: 500px; bottom: 0;}
-.relive-con .relive-image img {width: 518px;}
+/* Keep desktop cartoon size/position at 1440: same as base (420px, 520px circle) */
+.relive-con .relive-image {left: 24px; width: 420px; max-width: 88%;}
+.relive-con .relive-image::before {width: 520px; height: 520px; bottom: 0; left: -40px;}
+.relive-con .relive-image img {max-width: 100%; max-height: 500px;}
 .relive-con .relive_wrapper .relive-doted {right: -10px; top: 85px;}
 .relive-con .relive_wrapper .relive-circle {left: -22px; top: 190px;}
 .classic-con {padding: 100px 0 170px;}
@@ -403,9 +413,10 @@ p {font-size: 18px; line-height: 24px;}
 .relive-con .relive_content h2 {margin-bottom: 12px;}
 .relive-con .relive_content p {line-height: 26px; margin-bottom: 24px;}
 .relive-con .relive_content .all_button {padding: 18px 26px;}
-.relive-con .relive-image {left: 25px;}
-.relive-con .relive-image::before {width: 415px; height: 415px; left: 18px;}
-.relive-con .relive-image img {width: 430px;}
+.relive-con .relive-image {left: 0; width: 320px; max-width: 92%;}
+.relive-con .relive-image::before {width: 380px; height: 380px; left: 0; bottom: 0;}
+.relive-con .relive-image img {max-width: 100%; max-height: 360px;}
+.relive-con .relive_wrapper {min-height: 380px;}
 .relive-con .relive_wrapper .relive-doted {right: -15px; top: 100px;}
 .relive-con .relive_wrapper .relive-doted img {width: 70px;}
 .relive-con .relive_wrapper .relive-circle {left: -6px; top: 130px;}
@@ -492,7 +503,10 @@ p {font-size: 18px; line-height: 24px;}
 .footer-con .middle_portion .phone_wrapper i {font-size: 24px; top: 6px;}
 .footer-con .middle_portion .phone_wrapper .phone_content {padding-left: 35px;}
 .footer-con .middle_portion .phone_wrapper a {font-size: 18px; line-height: 18px;}
-.footer-con .copyright p {padding: 15px 0;}
+.footer-con .copyright p {
+    padding: 5px 0;   /* small, consistent spacing on small screens */
+    margin: 0;
+}
 /* Home 2 */
 .banner2-con {padding: 100px 0;}
 .banner2-con .banner-leftcircle,
@@ -771,14 +785,14 @@ button:focus {outline: none;}
 .banner-con .banner-image {position: relative; text-align: center; right: -10px; bottom: 0;}
 .banner-con .banner-image img {width: 385px;}
 .banner-con .banner-image::before {width: 420px; height: 420px; bottom: 26px; left: 0; right: 0; margin: 0 auto;}
-.relive-con {padding: 0; margin-top: -35px;}
+.relive-con {padding: 0; margin-top: -35px; min-height: 0;}
 .relive-con .relive_content {width: 540px; padding: 0; text-align: center; margin: 0 auto 20px;}
 .relive-con .relive_content h2 {margin-bottom: 10px;}
 .relive-con .relive_content p {line-height: 22px; margin-bottom: 15px;}
 .relive-con .relive_content .all_button {padding: 16px 24px;}
-.relive-con .relive-image {position: relative; text-align: center; left: 0;}
-.relive-con .relive-image::before {width: 355px; height: 355px; left: 0; right: 0; margin: 0 auto;}
-.relive-con .relive-image img {width: 360px;}
+.relive-con .relive-image {position: relative; text-align: center; left: 0; width: 100%; max-width: 320px; margin: 0 auto 20px;}
+.relive-con .relive-image::before {width: 320px; height: 320px; left: 50%; transform: translateX(-50%); right: auto; margin: 0; bottom: 0;}
+.relive-con .relive-image img {max-width: 100%; max-height: 320px; width: auto; margin: 0 auto;}
 .relive-con .relive_wrapper {position: absolute; display: inline-block;}
 .relive-con .relive_wrapper .relive-doted {right: -260px; top: 120px;}
 .relive-con .relive_wrapper .relive-circle {left: -255px; top: 300px;}
@@ -1145,8 +1159,9 @@ p {font-size: 14px; line-height: 20px;}
 .relive-con .relive_content {width: 415px; margin-bottom: 15px;}
 .relive-con .relive_content p {line-height: 20px; margin-bottom: 12px;}
 .relive-con .relive_content .all_button {padding: 16px;}
-.relive-con .relive-image::before {width: 300px; height: 300px;}
-.relive-con .relive-image img {width: 300px;}
+.relive-con .relive-image {position: relative; left: 0; max-width: 280px; margin: 0 auto 16px;}
+.relive-con .relive-image::before {width: 260px; height: 260px; left: 50%; transform: translateX(-50%); bottom: 0;}
+.relive-con .relive-image img {max-width: 100%; max-height: 280px;}
 .relive-con .relive_wrapper .relive-doted {right: -210px; top: 95px;}
 .relive-con .relive_wrapper .relive-doted img {width: 65px;}
 .relive-con .relive_wrapper .relive-circle {left: -210px; top: 210px;}
@@ -1479,8 +1494,9 @@ h3 {font-size: 20px; line-height: 20px;}
 .banner-con .banner-image::before {display: none;}
 .relive-con .relive_content {width: 100%; margin-bottom: 10px;}
 .relive-con .relive_content .all_button {padding: 14px;}
-.relive-con .relive-image::before {width: 200px; height: 200px; bottom: 25px;}
-.relive-con .relive-image img {width: 220px;}
+.relive-con .relive-image {position: relative; left: 0; max-width: 220px; margin: 0 auto 12px;}
+.relive-con .relive-image::before {width: 200px; height: 200px; left: 50%; transform: translateX(-50%); bottom: 15px;}
+.relive-con .relive-image img {max-width: 100%; max-height: 220px;}
 .relive-con .relive_wrapper .relive-doted {right: -155px; top: 66px;}
 .relive-con .relive_wrapper .relive-doted img {width: 50px;}
 .relive-con .relive_wrapper .relive-circle {left: -155px; top: 160px;}

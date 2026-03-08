@@ -368,8 +368,8 @@ html{
 }
 .header .last_list .contact_us:hover{
     color: var(--e-global-color-white) !important;
-    background-color: var(--e-global-color-dark-moderate-violet);
-    box-shadow: 0px 3px 22px 3px rgb(104 50 146 / 31%);
+    background-color: #9ACD32; /* yellow green on hover */
+    box-shadow: 0px 3px 22px 3px rgba(154, 205, 50, 0.31);
 }
 .header .last_list .contact_us:hover i{
     transform: translateX(4px);
@@ -480,6 +480,10 @@ html{
 
 /* Relive */
 
+.relive-con {
+    overflow: hidden;
+    min-height: 520px;
+}
 .relive-con .relive-rightbottomimage {
     position: absolute;
     right: 32px;
@@ -506,25 +510,51 @@ html{
     right: -152px;
     top: 302px;
 }
+
+/* Desktop only: give left column height so cartoon positions correctly */
+@media (min-width: 992px) {
+    .relive-con .row {
+        min-height: 580px;
+    }
+    .relive-con .row > div.order-lg-1 {
+        min-height: 580px;
+    }
+}
+
+/* Relive cartoon: left column, inside green circle. Reference: ~40–45% width, ~60% height, head aligned with heading. */
 .relive-con .relive-image {
     position: absolute;
-    left: -82px;
+    left: 24px;
     bottom: 0;
+    width: 420px;
+    max-width: 88%;
+    z-index: 1;
+    margin: 0;
+    pointer-events: none;
+}
+.relive-con .relive-image img {
+    max-width: 100%;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: bottom left;
+    display: block;
 }
 .relive-con .relive-image::before {
     content: "";
-    width: 578px;
-    height: 578px;
-    bottom: 50px;
-    left: 30px;
+    width: 520px;
+    height: 520px;
+    bottom: 0;
+    left: -40px;
     border-radius: 100%;
     position: absolute;
-    /* Relive section: circle behind relive-image.png */
     background-color: #dff2b0;
     z-index: -1;
 }
 .relive-con .relive_wrapper {
     position: relative;
+    min-height: 480px;
 }
 .relive-con .relive_wrapper .relive-circle {
     position: absolute;
@@ -588,6 +618,20 @@ html{
     display: flex;
     flex-direction: column;
 }
+/* Kulfi Flavours page: make all kulfi item cards have a thick yellow‑green border, with pink on hover */
+.shop1-con .classic-box {
+    border-width: 4px;
+    border-style: solid;
+    border-color: #f83d8e; /* pink */
+}
+.shop1-con .classic-box:hover {
+    border-color: #9ACD32; /* yellow‑green on hover */
+}
+
+/* Kulfi Flavours page: slightly smaller cards so more items fit on screen */
+.shop1-con .classic-box {
+    padding: 8px 8px 18px;
+}
 .classic-con .classic-box .classic_image_box {
     /* Fixed image area so tall images (e.g. 700px) don't grow/overflow the card */
     height: 244px;
@@ -599,6 +643,11 @@ html{
     border-radius: 10px;
     background: var(--e-global-color-white);
     overflow: hidden;
+}
+/* Kulfi Flavours page: override classic image height with a smaller size */
+.shop1-con .classic-box .classic_image_box {
+    height: 200px;
+    min-height: 200px;
 }
 .classic-con .classic-box .box1 {
     background-color: #fffaf4;
@@ -717,6 +766,11 @@ html{
 }
 .classic-con .classic-box:hover {
     border: 1px solid var(--e-global-color-accent);
+}
+.shop1-con .classic-box:hover {
+    border-width: 4px;
+    border-style: solid;
+    border-color: #9ACD32; /* ensure yellow‑green hover border on Kulfi Flavours page */
 }
 .classic-con .classic-box .price_wrapper a:hover {
     background-color: var(--e-global-color-accent);
@@ -1650,7 +1704,8 @@ html{
     font-size: 12px;
     line-height: 12px;
     font-weight: 400;
-    padding: 0;
+    padding: 5px 0; /* consistent spacing on desktop */
+    margin: 0; /* remove default paragraph margins */
     text-align: center;
     color: var(--e-global-color-black);
 }
@@ -1661,7 +1716,7 @@ html{
     border-top: 1px solid rgb(0 0 0 / 15%);
 }
 .footer-con .copyright .credit{
-    margin-top: 6px;
+    margin-top: 0; /* no extra gap above credit line */
     font-size: 12px;
     line-height: 12px;
     font-weight: 600;
@@ -2755,7 +2810,7 @@ html{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: linear-gradient(140deg, var(--e-global-color-gradient-1) 8%, var(--e-global-color-gradient-2) 40%, var(--e-global-color-gradient-3) 66%, var(--e-global-color-gradient-4) 91%);
+    background-image: linear-gradient(140deg, #9ACD32 8%, var(--e-global-color-gradient-2) 40%, var(--e-global-color-gradient-3) 66%, var(--e-global-color-gradient-4) 91%);
 }
 .sub_banner .sub_banner_content h1 {
     font-size: 80px;
@@ -2841,7 +2896,7 @@ html{
 .mission-con {
     overflow: hidden;
     padding: 165px 0 162px;
-    background-color: var(--e-global-color-dark-moderate-violet);
+    background-color: #9ACD32;
 }
 .mission-con::before {
     content: "";
@@ -3086,7 +3141,7 @@ html{
     position: relative;
     border-radius: 100%;
     text-align: center;
-    background-color: var(--e-global-color-dark-moderate-violet);
+    background-color: #9ACD32; /* yellow green */
     transition: all 0.3s ease-in-out;
 }
 .contact-con .contact-box:hover .icon{
@@ -3389,7 +3444,8 @@ html{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: linear-gradient(140deg, var(--e-global-color-gradient-1) 8%, var(--e-global-color-gradient-2) 40%, var(--e-global-color-gradient-3) 66%, var(--e-global-color-gradient-4) 91%);
+    /* About breadcrumb/sub-banner: violet → yellow-green */
+    background-image: linear-gradient(140deg, #9ACD32 8%, var(--e-global-color-gradient-2) 40%, var(--e-global-color-gradient-3) 66%, var(--e-global-color-gradient-4) 91%);
 }
 .thank-you .thank_you_content .thankyou-image{
     margin-bottom: 42px;

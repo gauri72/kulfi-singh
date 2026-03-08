@@ -18,7 +18,7 @@ $(document).ready(function(){
 			'<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>',
 			'<li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>',
 			'<li class="nav-item"><a class="nav-link" href="shop1.html">Kulfi Flavours</a></li>',
-			'<li class="nav-item"><a class="nav-link" href="special-offer.html">Special Offers</a></li>',
+			'',
 			'<li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>'
 		].join(''));
 
@@ -37,13 +37,13 @@ $(document).ready(function(){
 		$('.last_list a.search-box, .last_list a[href="#search"]').remove();
 		$('.last_list a.cart').remove();
 
-		// Update CTA to point to Special Offers
+		// Update header CTA to point to Kulfi Flavours
 		var $cta = $('.last_list a.contact_us');
 		if ($cta.length) {
-			$cta.attr('href', 'special-offer.html');
+			$cta.attr('href', 'shop1.html');
 			// Keep the arrow icon if present; update only the text node
 			var $icon = $cta.find('i').first().detach();
-			$cta.text('View Special Offers ').append($icon);
+			$cta.text('View Kulfi Flavours ').append($icon);
 		}
 	})();
 
